@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewprot" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" >
+    <link rel="stylesheet"  href="{% static 'sticker_edit_4.css' %}" >
+    <title>Hello, pybo!</title>
+</head>
+<body>
+<div id="content">
+    <ul>
+        <li id="fixed1"></li>
+    </ul>
+    <p id="fixed"></p>
+    <button>이미지업로드</button>
+    <br>
+    <button1>완료</button>
+
+    <br>
+
+    <div class ="grid">
+      <div class="image1 image00"></div>
+      <div class="image2 image00"></div>
+      <div class="image3 image00"></div>
+      <div class="image4 image00"></div>
+    </div>
+
+        <div class="edit"></div>
+        <div id="stickers"></div>
+
+  <div class="fixed"></div>
+    <img id="image1" class="sticker1 sticker a"  src="/static/images/cat.jpg" onclick="changeBg('image1')" />
+    <img id="image2" class="sticker2 sticker a" src="/static/images/bear.jpg" onclick="changeBg('image2')" />
+    <img id="image3" class="sticker3 sticker a" src="/static/images/bear_nose.jpg" onclick="changeBg('image3')" />
+    <img id="image4" class="sticker4 sticker a" src="/static/images/bat2.jpg" onclick="changeBg('image4')" />
+    <img id="image5" class="sticker5 sticker a" src="/static/images/rabbit.JPG" onclick="changeBg('image5')" />
+    <img id="image6" class="sticker6 sticker a" src="/static/images/fox2.JPG" onclick="changeBg('image6')" />
+
+    <div class="left pass" id="pass_1"></div>
+    <div class="right pass" id="pass_2"></div>
+
+    <script>
+      let previousImage = null;
+      function changeBg(id) {
+        const image = document.getElementById(id);
+        const background = document.querySelector(".background");
+        if (image.classList.contains("active")) {
+          image.classList.remove("active");
+          background.style.background = "";
+          previousImage = null;let previousImage = null;
+function changeBg(id) {
+  const image = document.getElementById(id);
+  const background = document.querySelector(".background");
+  if (image.classList.contains("active")) {
+    image.classList.remove("active");
+    background.style.background = "";
+    previousImage = null;
+  } else {
+    image.classList.add("active");
+    if (previousImage !== null) {
+      previousImage.classList.remove("active");
+    }
+    const imageList = document.querySelectorAll("img");
+    for (let i = 0; i < imageList.length; i++) {
+      if (imageList[i].id === id) {
+        if (id === "image1") {
+          background.style.background = "url('/static/images/jisoo_cat.png')";
+        } else if (id === "image2") {
+          background.style.background = "url('/static/images/jisoo_bear2.jpg')";
+        } else if (id === "image3") {
+          background.style.background = "url('/static/images/jisoo_bear_nose2.jpg')";
+        } else if (id === "image4") {
+          background.style.background = "url('/static/images/jisoo_bat2.jpg')";
+        } else if (id === "image5") {
+          background.style.background = "url('/static/images/jisoo_rabbit2.JPG')";
+        } else if (id === "image6") {
+          background.style.background = "url('/static/images/jisoo_fox2.JPG')";
+        }
+        previousImage = image;
+        break;
+      }
+    }
+  }
+}
+
+        } else {
+          image.classList.add("active");
+          if (previousImage !== null) {
+            previousImage.classList.remove("active");
+          }
+          if (id === "image1") {
+            background.style.background = "url('/static/images/jisoo_cat.png')";
+          }
+          if (id === "image2") {
+            background.style.background = "url('/static/images/jisoo_bear2.jpg')";
+          }
+          if (id === "image3") {
+            background.style.background = "url('/static/images/jisoo_bear_nose2.jpg')";
+          }
+          if (id === "image4") {
+            background.style.background = "url('/static/images/jisoo_bat2.jpg')";
+          }
+          if (id === "image5") {
+            background.style.background = "url('/static/images/jisoo_rabbit2.JPG')";
+          }
+          else if (id === "image6") {
+            background.style.background = "url('/static/images/jisoo_fox2.JPG')";
+          }
+          previousImage = image;
+        }
+      }
+    </script>
+    <div class="background"></div>
+
+<script src="{% static 'jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'bootstrap.min.js' %}"></script>
+</body>
+</html>
+
+

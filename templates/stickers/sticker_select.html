@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'users/user_menu2.html' %}
+<head>
+    <link rel="stylesheet" href="/static/css/sticker_select.css">
+
+</head>
+
+
+<body>
+
+        <div class="container">
+            <div class="image" id="jisoo-cat">
+                <img src="{% static '/images/jisoo_cat.png' %}" style="cursor: pointer"
+                onclick ="window.open('{% url 'sticker_edit' %}');"
+                alt ="jisoo-cat" width="170">
+                
+                    <h4>딸기 든 냐옹이</h4>
+                    <p>귀여운 고양이가 <br> 되어보세요^^</p>
+            </div>
+
+            <div class="image" id="jisoo-bear">
+                <img src="{% static '/images/jisoo_bear.jpg' %}" style="cursor: pointer"
+                onclick="window.open('{% url 'sticker_edit' %}');"
+                alt ="jisoo-bear" width="170">
+                    <h4>파랑 곰돌이</h4>
+                    <p>파랑 곰돌이가 <br> 되어보세요>.< </p>
+            </div>
+
+            <div class="image" id="jisoo-bearnose">
+                <img src="{% static '/images/jisoo_bear_nose.jpg' %}" style="cursor: pointer"
+                onclick="window.open('{% url 'sticker_edit' %}');"
+                alt = "jisoo-bearnose" width="170">
+                    <h4>곰돌이</h4>
+                    <p>곰돌이가 <br> 되어보세요~ </p>
+            </div>
+
+            <br>
+            
+            <div class="image" id="jisoo-bat">
+                <img src="{% static '/images/jisoo_bat.jpg' %}" style="cursor: pointer"
+                onclick="window.open('{% url 'sticker_edit' %}');"
+                alt="jisoo-bat" width="170">
+                    <h4>핑크 박쮜</h4>
+                    <p>핑크 박쮜가 <br> 되어보세요~</p>
+            </div>
+
+            <div class="image" id="jisoo-bunny">
+                <img src="{% static '/images/jisoo_bunny.png' %}" style="cursor: pointer"
+                onclick="window.open('{% url 'sticker_edit' %}');"
+                alt ="jisoo-bunny" width="170">
+                    <h4>토끼</h4>
+                    <p>기여운 토끼가 <br> 되어보세용 </p>
+            </div>
+
+            <div class="image" id="jisoo-fox">
+                <img src="{% static '/images/jisoo_fox.jpg' %}" style="cursor: pointer"
+                onclick="window.open('{% url 'sticker_edit' %}');"
+                alt ="jisoo-fox" width="170">
+                    <h4>여웅</h4>
+                    <p>기여운 여우가 <br> 되어보세요~ </p>
+            </div>
+
+            <br>
+
+            <div class="image" id="jisoo-dalma">
+                <img src="{% static '/images/jisoo_dalmadog.png' %}" style="cursor: pointer"
+                onclick="window.open('{% url 'sticker_edit' %}');"
+                alt ="jisoo-dalma" width="170">
+                    <h4>달마시안</h4>
+                    <p>달마시안 강아지가 <br> 되어보세요~ </p>
+            </div>
+
+            <div class="image" id="jisoo-dog">
+                <img src="{% static '/images/jisoo_dog.png' %}" style="cursor: pointer"
+                onclick="window.open('{% url 'sticker_edit' %}');"
+                alt ="jisoo-dog" width="170">
+                    <h4>강쥐</h4>
+                    <p>기여운 갈색 강쥐가 <br> 되어보세요~ </p>
+            </div>
+
+            <div class="image" id="jisoo-neoncat">
+                <img src="{% static '/images/jisoo_pinkcat.png' %}" style="cursor: pointer"
+                onclick="window.open('{% url 'sticker_edit' %}');"
+                alt ="jisoo-pinkcat" width="170">
+                    <h4>네온 냐옹이</h4>
+                    <p>네온 냐옹이가 <br> 되어보세요~ </p>
+            </div>
+        </div>
+</body>
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load datos_filter %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+</head>
+
+ <div class="slider">
+        <input type="radio" name="slide" id="slide1" checked>
+        <input type="radio" name="slide" id="slide2">
+        <input type="radio" name="slide" id="slide3">
+        <input type="radio" name="slide" id="slide4">
+        <input type="radio" name="slide" id="slide5">
+        <input type="radio" name="slide" id="slide6">
+        <input type="radio" name="slide" id="slide7">
+        <input type="radio" name="slide" id="slide8">
+        <input type="radio" name="slide" id="slide9">
+        <ul id="imgholder" class="imgs">
+          <li><img src="{% static 'img/jisoo_bat2.JPG' %}" alt=""></li>
+          <li><img src="{% static 'img/jisoo_bear2.JPG' %}" alt=""></li>
+          <li><img src="{% static 'img/jisoo_bear_nose2.JPG' %}" alt=""></li>
+          <li><img src="{% static 'img/jisoo_cat2.JPG'%}" alt=""></li>
+          <li><img src="{% static 'img/jisoo_whitedog.JPG'%}" alt=""></li>
+          <li><img src="{% static 'img/jisoo_dog.JPG'%}" alt=""></li>
+          <li><img src="{% static 'img/Jisoo_rabbit2.JPG'%}" alt=""></li>
+          <li><img src="{% static 'img/jisoo_fox2.JPG'%}" alt=""></li>
+          <li><img src="{% static 'img/jisoo_whitedog.JPG'%}" alt=""></li>
+    </ul>
+{#    <ul class="slide-list">#}
+{#      <li>#}
+{#        <label for="slide1"><img src="{% static 'img/jisoo_bat2.JPG' %}" alt=""></label>#}
+{#      </li>#}
+{#      <li>#}
+{#        <label for="slide2"><img src="{% static 'img/jisoo_bear2.JPG' %}" alt=""></label>#}
+{#      </li>#}
+{#      <li>#}
+{#        <label for="slide3"><img src="{% static 'img/jisoo_bear_nose2.JPG'%}" alt=""></label>#}
+{#      </li>#}
+{#      <li>#}
+{#        <label for="slide4"><img src="{% static 'img/jisoo_cat2.JPG' %}" alt=""></label>#}
+{#      </li>#}
+{#      <li>#}
+{#        <label for="slide5"><img src="{% static 'img/jisoo_whitedog.JPG' %}\" alt=""></label>#}
+{#      </li>#}
+{#      <li>#}
+{#        <label for="slide6"><img src="{% static 'img/jisoo_dog.JPG' %}" alt=""></label>#}
+{#      </li>#}
+{#      <li>#}
+{#        <label for="slide7"><img src="{% static 'img/Jisoo_rabbit2.JPG' %}" alt=""></label>#}
+{#      </li>#}
+{#      <li>#}
+{#        <label for="slide8"><img src="{% static 'img/jisoo_fox2.JPG' %}" alt=""></label>#}
+{#      </li>#}
+{#      <li>#}
+{#        <label for="slide9"><img src="{% static 'img/jisoo_whitedog.JPG' %}" alt=""></label>#}
+{#      </li>#}
+{#    </ul>#}
+    <div class="bullets">
+        <label for="slide1">&nbsp;</label>
+        <label for="slide2">&nbsp;</label>
+        <label for="slide3">&nbsp;</label>
+        <label for="slide4">&nbsp;</label>
+        <label for="slide5">&nbsp;</label>
+        <label for="slide6">&nbsp;</label>
+        <label for="slide7">&nbsp;</label>
+        <label for="slide8">&nbsp;</label>
+        <label for="slide9">&nbsp;</label>
+    </div>
+    <div class="prev">&lt;</div>
+    <div class="next">&gt;</div>
+</div>
+
+
+<script>
+  var prevBtn = document.querySelector('.slider .prev');
+  var nextBtn = document.querySelector('.slider .next');
+  var slideCount = document.querySelectorAll('.slider input[name="slide"]').length;
+  var currentSlide = 1;
+  var slideImages = document.querySelectorAll('.slider .imgs li');
+
+  prevBtn.addEventListener('click', function() {
+    currentSlide--;
+    if (currentSlide < 1) {
+      currentSlide = slideCount;
+    }
+    changeSlide(currentSlide);
+  });
+
+  nextBtn.addEventListener('click', function() {
+    currentSlide++;
+    if (currentSlide > slideCount) {
+      currentSlide = 1;
+    }
+    changeSlide(currentSlide);
+  });
+
+  function changeSlide(slideIndex) {
+    var slideInputs = document.querySelectorAll('.slider input[name="slide"]');
+
+    slideInputs.forEach(function(input) {
+      input.checked = false;
+    });
+
+    slideInputs[slideIndex - 1].checked = true;
+  }
+
+  function transitionEndHandler() {
+    slideImages.forEach(function(image) {
+      image.style.transition = '';
+    });
+  }
+
+  slideImages.forEach(function(image) {
+    image.addEventListener('transitionend', transitionEndHandler);
+  });
+
+  prevBtn.addEventListener('click', function() {
+    slideImages.forEach(function(image) {
+      image.style.transition = 'opacity 0.5s ease-in-out';
+    });
+    changeSlide(currentSlide);
+  });
+
+  nextBtn.addEventListener('click', function() {
+    slideImages.forEach(function(image) {
+      image.style.transition = 'opacity 0.5s ease-in-out';
+    });
+    changeSlide(currentSlide);
+  });
+</script>
+{% endblock %}
