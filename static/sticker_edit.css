@@ -1,0 +1,198 @@
+/* 클릭하면 border 바뀌는 부분 */
+.active {
+    border: 2px solid #AAB9FF;
+  }
+  .background {
+    width: 362px;
+    height: 451px;
+    background-repeat: no-repeat left top;
+    position:fixed; left:375px; top:44px;
+  }
+  #background{background-size: contain ;}
+  .image1{
+    width:50px;
+    height:50px;
+    border:1px
+  }
+
+/* 전체창 */
+#content{
+    border:1px solid gray;
+    border-radius:10px;
+    padding:100px;
+    width: 1100px;
+    height: 450px;
+    background: white;
+}
+
+ul {margin-left:15px;
+list-style-type:none;}
+ul li {margin:10px 15px;}
+/* 이미지업로드버튼 */
+button{
+border:1px solid lightgray;
+border-radius:5px;
+background-color: lightgray;
+font-size: 12px;
+padding:10px;
+position:fixed; left:50px; top:550px;
+width:130px;
+height: 40px;
+text-align: center;
+
+}
+
+/* 완료버튼 */
+button1{
+border:1px;
+border-radius:5px;
+background-color: #AAB9FF;
+font-size: 20px;
+padding:7px;
+position:fixed; left:50px; top:595px;
+width:115px;
+height: 30px;
+text-align: center;
+
+}
+
+
+/* 이미지 */
+li {
+width:500px;
+height:250px;
+border:5px solid gray;
+padding:100px;
+margin:20px;
+background:url("img/jisoo_cat.png") no-repeat left top ;
+text-align: center;
+position:fixed; left:200px; top:30px;
+
+}
+#fixed1{
+background-size: contain ;}
+
+/* before 이미지 */
+.edit{
+width: 362px;
+height: 451px;
+margin:right;
+position:fixed; left:400px; top:44px;
+background:url("/static/images/jisoo2.jpg") no-repeat left top;
+position:fixed; left:375px; top:44px;
+
+}
+
+#face{background-size: contain ;}
+
+/* 불러온 사진 목록 */
+.image00{
+width: 220px; height: 120px;
+border:5px solid gray;
+background-color: white;
+position:fixed; left:1040px;
+}
+/* 사진 목록 위치  */
+.image1{position:fixed; top:40px;}
+.image2{position:fixed; top:180px;}
+.image3{position:fixed; top:320px;}
+.image4{position:fixed; top:460px;}
+
+
+
+/* 스티커 */
+/* 스티커 크기 조절 */
+.sticker{
+width: 90px; height: 100px;
+}
+/* border 선  */
+/* .sticker {margin:5px;border:#FFF 2px solid;}
+.sticker:hover {border:#AAB9FF 2px solid;} */
+
+#sticker{
+width: 90px; height: 102px;
+}
+/*스티커창 테두리 */
+#stickers{
+width:572px; height:110px;
+background:lightgray;
+position:fixed;left:300px; top:545px;
+}
+
+/* bat */
+.sticker1{
+position:fixed; left:305px; top:550px;
+background:url("/static/images/bat.jpg") no-repeat left top;
+
+}
+#bat{background-size: 100% 110% ;}
+
+/* cat */
+.sticker2{
+position:fixed; left:399px; top:550px;
+background:url("/static/images/cat.png") no-repeat left top;
+
+}
+#cat{background-size: cover ;}
+
+/* bear */
+.sticker3{
+position:fixed; left:493px; top:550px;
+background:url("/static/images/bear.png") no-repeat left top;
+
+}
+#bear{background-size: cover ;}
+
+/* bear_nose2 */
+.sticker4{
+position:fixed; left:587px; top:550px;
+background:url("/static/images/bear_nose2.png") no-repeat left top;
+
+}
+#bear_nose{background-size: cover ;}
+
+/* rabbit */
+.sticker5{
+position:fixed; left:682px; top:550px;
+background:url("/static/images/rabbit.png") no-repeat left top;
+
+}
+#rabbit{background-size: cover;}
+
+/* fox */
+.sticker6{
+position:fixed; left:777px; top:550px;
+
+background:url("/static/images/fox.JPG") no-repeat left top;
+}
+#fox{background-size: cover;}
+
+/* 스티커 이동창 */
+/* <-> */
+.pass{
+width: 30px; height: 60px;
+margin:right;
+
+}
+.left{
+/* < */
+background:url("/static/images/pass_left_2.jpg") no-repeat left top;
+position:fixed; left:270px; top:580px;
+}
+/* > */
+.right{
+position:fixed; left:873px; top:580px;
+background:url("/static/images/pass_right_2.jpg") no-repeat left top;
+}
+.pass{
+background-size: contain ;
+}
+
+
+
+ul{
+list-style:none;
+width:500px;
+margin:10px;
+padding:0;
+position: fixed; right:10px; top:10px;
