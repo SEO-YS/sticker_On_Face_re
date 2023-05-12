@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+ {% extends 'base.html' %}
 {% load static %}
 {% load datos_filter %}
 {% block content %}
@@ -20,7 +20,7 @@
         <input type="radio" name="slide" id="slide9">
        <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="{% static 'img/jisoo_bat.JPG' %}"></div>
+                <div class="swiper-slide"><a href="{% url 'datos:bat' %}"><img src="{% static 'img/jisoo_bat.JPG' %}"></a></div>
                 <div class="swiper-slide"><img src="{% static 'img/jisoo_bear.JPG' %}"></div>
                 <div class="swiper-slide"><img src="{% static 'img/jisoo_bear_nose.JPG'%}"></div>
                 <div class="swiper-slide"><img src="{% static 'img/jisoo_cat.JPG' %}"></div>

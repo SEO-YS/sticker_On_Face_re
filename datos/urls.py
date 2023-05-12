@@ -1,7 +1,8 @@
-from django.urls import path
+from django.urls import path,include
 
 # from . import views
 from .views import base_views, question_views, answer_views
+from stickers import views
 
 
 app_name = 'datos'
@@ -32,4 +33,5 @@ urlpatterns = [
           question_views.question_vote, name='question_vote'),
      path('answer/vote/<int:answer_id>/', 
           answer_views.answer_vote, name='answer_vote'),
+     path('bat/',views.bat , name='bat')
 ]

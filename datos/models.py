@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 
 # Create your models here.
@@ -8,9 +9,10 @@ class Question(models.Model):
     subject = models.CharField(max_length=200)
     content = models.TextField()
     content2 = models.TextField(default='')
-    create_date = models.DateTimeField()
+    create_date = models.DateTimeField(default=timezone.now)
     modify_date = models.DateTimeField(null=True, blank=True)   # 어떤조건이든 값을 비워둘 수 있음
     voter = models.ManyToManyField(User, related_name='voter_question')  # 추천인 추가
+    image = models.FileField(upload_to='uploads/')
 
     def __str__(self):
         return self.subject
@@ -34,3 +36,9 @@ class Question3(Question):
 
 class Question4(Question):
     pass
+
+
+
+class Images2(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    image = models.FileField(upload_to='uploads/')

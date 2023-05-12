@@ -37,6 +37,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'common.apps.CommonConfig',
+    'stickers.apps.StickersConfig',
     'datos.apps.DatosConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -138,6 +139,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/uploads/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
@@ -147,3 +149,4 @@ LOGIN_REDIRECT_URL = '/'
 
 # 로그아웃시 이동하는 URL
 LOGOUT_REDIRECT_URL = '/'
+

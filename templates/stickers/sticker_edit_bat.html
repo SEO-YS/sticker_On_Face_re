@@ -1,44 +1,44 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% load datos_filter %}
+{% block content %}
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>편집창</title>
-    <link rel="stylesheet" href="/static/css/sticker_edit_bat.css" />
-<body>
-    <div id="content">
-        
-        
-    <h1></h1>
-    <ul>
-        <li id="fixed1"></li>
-    </ul>
-    <p id="fixed"></p>
-    <button>이미지업로드</button>
-    <br>
-    <button1>완료</button>
-    <br>
-        <div class="fixed"></div>
-        <div class="face" id="face"></div>
-        <div class="image1"></div>
-        <div class="image2"></div>
-        <div class="image3"></div>
-        <div class="image4"></div>
+<link rel="stylesheet" type="text/css" href="{% static 'style3.css' %}">
+</head>
+    <body>
+     <div class="container">
+        <div class="image-upload" id="image-upload">
 
-        <div class="sticker1 sticker" id="cat"></div>
-        <div class="sticker2 sticker" id="bear"></div>
-        <div class="sticker3 sticker" id="bear_nose"></div>
-        <div class="sticker4 sticker" id="bat"></div>
-        <div class="sticker5 sticker" id="rabbit"></div>
-        <div class="sticker6 sticker" id="fox"></div>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
 
-        <div class="left" id="pass_1"></div>
-        <div class="right" id="pass_2"></div>
+                <div class="button">
+                    <label for="chooseFile">
+                        📷 CHOICE PICTURE 📷
+                    </label>
+                </div>
+                <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+            </form>
+
+            <div class="fileContainer">
+                <div class="fileInput">
+                    <p>PICTURE NAME: </p>
+                    <p id="fileName"></p>
+                </div>
+               <div class="buttonContainer">
+                    <div class="submitButton" id="submitButton">CHECK</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="image-show" id="image-show"></div>
 
     </div>
-    
+
+    <script src="{% static 'stickercheck.js' %}"></script>
+
 
 </body>
-</html>
+
+{% endblock %}

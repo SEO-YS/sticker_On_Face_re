@@ -3,10 +3,14 @@
 # Create your views here.
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
+
+from common.ai_process import put_sticker
 from common.forms import UserForm
-from datos.models import Question, Question2, Question3, Question4
+from datos.models import Question, Question2, Question3, Question4,Images2
 from django.core.paginator import Paginator
 from django.db.models import Q, Count
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 
 def signup(request):
@@ -109,3 +113,32 @@ def seoul_pop(request):
     max_index = len(paginator.page_range)
     context = {'question_list': page_obj, 'max_index': max_index, 'page': page, 'kw': kw, 'so': so}
     return render(request, 'common/seoul_pop.html', context)
+
+
+
+def imageUpload(request):
+    if request.method == 'POST':
+        image_file = request.FILES['image']
+        print(image_file)
+
+        # 모델 인스턴스 생성 및 필드에 값 할당
+        your_model_instance = Images2()
+        your_model_instance.image = image_file
+        your_model_instance.author = request.user
+        print(your_model_instance.image)
+
+        # 아래는 AI 작업 1줄
+        # your_model_instance = put_sticker(your_model_instance)
+
+        your_model_instance.save()
+        print(your_model_instance.image)
+
+        print(your_model_instance.image)
+        print(your_model_instance.image.url)
+        response_data = {
+            'filepath': your_model_instance.image.url,
+            'additional_info': 'Additional information you want to pass',
+        }
+        print(your_model_instance.image.path)
+        return JsonResponse(response_data)
+    return JsonResponse({'success': 'True'})

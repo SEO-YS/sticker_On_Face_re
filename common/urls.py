@@ -13,5 +13,6 @@ urlpatterns = [
     path('conclusion/', views.conclusion, name='conclusion'),
     path('population/', views.population, name='population'),
     path('seoul_pop/', dv.index, name='seoul_pop'),
+    path('imageUpload/',views.imageUpload,name='imageUpload')
     # path('seoul_pop/', views.seoul_pop, name='seoul_pop'),
 ]
