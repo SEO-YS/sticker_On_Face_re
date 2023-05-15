@@ -1,21 +1,75 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
 {% block content %}
-<div class="container my-3">
-    <form method="post" action="{% url 'common:login' %}">
-        {% csrf_token %}
-        <input type="hidden" name="next" value="{{ next }}">  <!-- 로그인 성공후 이동되는 URL -->
-        {% include "form_errors.html" %}
-        <div class="mb-3">
-            <label for="username">사용자ID</label>
-            <input type="text" class="form-control" name="username" id="username"
-                   value="{{ form.username.value|default_if_none:'' }}">
-        </div>
-        <div class="mb-3">
-            <label for="password">비밀번호</label>
-            <input type="password" class="form-control" name="password" id="password"
-                   value="{{ form.password.value|default_if_none:'' }}">
-        </div>
-        <button type="submit" class="btn btn-primary">로그인</button>
-    </form>
+<div class="main_menu">
 </div>
+<div class="inner">
+	<div class="sign_card">
+		<h1>HYPER</h1>
+		<form action="" method="post">
+			{% csrf_token %}
+			<table class="info">
+				<tr>
+					<td><input id="id" type="text" name="id" placeholder="아이디" required/></td>
+				</tr>
+				<tr>
+					<td><input id="pwd" type="password" name="pwd" placeholder="비밀번호" required/></td>
+				</tr>
+				<tr>
+					<td><button id="check_login" style="width:300px;" type="button">LOGIN</button></td>
+				</tr>
+			</table>
+		</form>
+		<ul>
+			<li>비밀번호 찾기</li>
+			<li><a href="#">아이디 찾기</a></li>
+			<li><a href="#">회원가입</a></li>
+		</ul>
+	</div>
+</div>
+{% endblock %}
+
+{% block script %}
+<!-- Log In -->
+<script type='text/javascript'>
+$(function(){
+	$("#check_login").click(function(){
+		console.log("--0--");
+		var userid = $('#id').val();
+		var userpw = $('#pwd').val();
+		console.log(userid);
+
+
+		if (userid === ''){
+			alert('아이디를 입력하세요');
+			return false;
+		}
+		if (userpw === ''){
+			alert('비밀번호를 입력하세요');
+			return false;
+		}
+		var csrf_token = "{{ csrf_token }}";
+		console.log("--1--");
+		$.ajax({
+			type: 'POST',
+			headers: {'X-CSRFToken': csrf_token},
+			data: {
+				'userid': userid,
+				'userpw': userpw,
+				'csrfmiddlewaretoken': csrf_token
+			},
+			success: function(response) {
+				console.log("--2--");
+				if (response['success'] == 'True') {
+					alert('아이디나 비밀번호가 올바르지 않습니다');
+				} else {
+					console.log("--3--");
+					alert(`환영합니다! ${response['MEMBER_NAME']} 님`);
+					location.href = `http://127.0.0.1:8000/?name=${response['MEMBER_NAME']}`;
+				}
+			}
+		});
+	});
+});
+</script>
 {% endblock %}
