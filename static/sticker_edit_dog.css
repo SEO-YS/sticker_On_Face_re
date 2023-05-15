@@ -67,7 +67,7 @@ position:fixed; left:200px; top:30px;
 width: 400px; height: 450px; 
 margin:right;
 position:fixed; left:400px; top:44px;
-background:url("/static/images/jisoo_dog.JPG") no-repeat left top;
+background:url("/static/img/jisoo_dog.JPG") no-repeat left top;
 
 }
 #face{background-size: 100% 100% ;}

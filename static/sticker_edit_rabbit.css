@@ -67,7 +67,7 @@ position:fixed; left:200px; top:30px;
 width: 400px; height: 450px; 
 margin:right;
 position:fixed; left:400px; top:44px;
-background:url("/static/images/Jisoo_rabbit2.JPG") no-repeat left top;
+background:url("/static/images/Jisoo_rabbit.JPG") no-repeat left top;
 
 }
 #face{background-size: 100% 100% ;}
@@ -119,7 +119,7 @@ background:url("/static/images/cat.jpg") no-repeat left top;
        
     margin:right;
     position:fixed; left:390px; top:547px;
-    background:url("/static/images/bear.jpg") no-repeat left top;
+    background:url("/static/img/bear.jpg") no-repeat left top;
     
     }
 #bear{background-size: 100% 100% ;}
@@ -128,7 +128,7 @@ background:url("/static/images/cat.jpg") no-repeat left top;
     width: 96px; height: 110px; 
     margin:right;
     position:fixed; left:480px; top:547px;
-    background:url("/static/images/bear_nose.jpg") no-repeat left top;    
+    background:url("/static/img/bear_nose.jpg") no-repeat left top;
 }
 #bear_nose{background-size: 100% 100%  ;}
 /* bat*/
@@ -136,7 +136,7 @@ background:url("/static/images/cat.jpg") no-repeat left top;
 width: 90px; height: 108px; 
 margin:right;
 position:fixed; left:576px; top:547px;
-background:url("/static/images/bat.jpg") no-repeat left top;
+background:url("/static/img/bat.jpg") no-repeat left top;
         
 }
 #bat{background-size: 100% 120% ;}
@@ -146,7 +146,7 @@ width: 90px; height: 104px;
 border:3px solid #AAB9FF;
 margin:right;
 position:fixed; left:663px; top:549px;
-background:url("/static/images/rabbit.JPG") no-repeat left top;
+background:url("/static/img/rabbit.JPG") no-repeat left top;
 /* fox */
 }
 #rabbit{background-size: cover ;}
@@ -154,7 +154,7 @@ background:url("/static/images/rabbit.JPG") no-repeat left top;
 width: 90px; height: 104px; 
 margin:right;
 position:fixed; left:758px; top:547px;
-background:url("/static/images/fox.JPG") no-repeat left top;       
+background:url("/static/img/fox.JPG") no-repeat left top;
 }
 #fox{background-size: cover ;}
 /* 스티커 이동창 */
@@ -163,7 +163,7 @@ width: 30px; height: 60px;
 /* < */
 margin:right;
 position:fixed; left:275px; top:575px;
-background:url("/static/images/pass_left.jpg") no-repeat left top;
+background:url("/static/img/pass_left.jpg") no-repeat left top;
 
 }
 /* > */
@@ -172,7 +172,7 @@ background:url("/static/images/pass_left.jpg") no-repeat left top;
            
     margin:right;
     position:fixed; left:853px; top:575px;
-    background:url("/static/images/pass_right.jpg") no-repeat left top;
+    background:url("/static/img/pass_right.jpg") no-repeat left top;
     }
    
 #pass_1{background-size: contain ;}
