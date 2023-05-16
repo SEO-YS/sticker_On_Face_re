@@ -12,6 +12,7 @@ from django.db.models import Q, Count
 def signup(request):
     if request.method == "POST":
         form = UserForm(request.POST)
+        print(form)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
